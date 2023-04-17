@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,10 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
   var url = "https://skin-app-production-e519.up.railway.app/predictApi";
 
   Future pickImageGallery() async {
-    PickedFile? pickedFile = await picker.getImage(
+    XFile? pickedFile = await picker.pickImage(
       source: ImageSource.gallery,
     );
-    // ignore: use_build_context_synchronously
     Navigator.pop(context);
     setState(() {
       img = File(pickedFile!.path);
